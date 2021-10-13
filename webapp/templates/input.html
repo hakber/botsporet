@@ -1,0 +1,12 @@
+
+<form action = http://localhost:5000/ method="POST">
+Vilken fråga?:
+
+<p><SELECT name="questionid" style="font-family:verdana">
+{% for j in questionList %}
+	<OPTION value={{j[0]}}>{{j[1]}}</OPTION>
+{% endfor %}
+</SELECT> </p>
+<p>Nivåpoäng <input type ="text" name = "level" /></p>
+<p><input type = "submit" value = "submit" /></p>
+</form>

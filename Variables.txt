@@ -1,0 +1,5 @@
+twitch_access_token=[value]
+twitch_client_id=[value]
+twitch_channel=[value]
+twitch_nick=[value]
+google_maps_api_token=[value]

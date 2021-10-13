@@ -27,7 +27,7 @@ För att skapa egen API-nyckel osv för Google Streetview/Maps, se dokumentation
 * Google Spreadsheets-integrering för att möjliggöra att fler är med och rättar manuellt. Kanske kan leaderboard-funktionen isf lösas mha en enkel pivottabell? Om Google Spreadsheets integreras tror jag dock det fortfarande är bra att mellanlagra i databas, känns som det finns risk för att skriva över svar som kommer in samtidigt annars eller andra fel osv (?).
 
 **Twitchbotten:**
-* Begränsa antal svar per fråga till 1
+* ~~Begränsa antal svar per fråga till 1~~ (Fixat, vilken king jag e)
 * Felmeddelanden till användare m.a.p. ovan eller om det är stängt för frågor
 * Svarsbekräftelse? (?)
 

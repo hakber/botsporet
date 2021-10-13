@@ -61,12 +61,17 @@ class Bot(commands.Bot):
             question_id=current_answer[1]
             level=current_answer[2]
 
-            #Skriv in i databasen
-            db_string="INSERT INTO ANSWERS (GAME_ID,QUESTION_ID,USERNAME,GUESS,LEVEL) \
-            VALUES ("+str(game_id)+","+str(question_id)+", '"+username+"','"+guess+"',"+ str(level)+" )"
-            #print(db_string)
-            conn.execute(db_string)
-            conn.commit()
+            cursor = conn.execute("SELECT count(*) FROM ANSWERS WHERE USERNAME = '"+username+"' AND QUESTION_ID="+str(question_id)+";")
+            question_count=cursor.fetchall()
+            if question_count[0][0]==0:
+                #Skriv in i databasen
+                db_string="INSERT INTO ANSWERS (GAME_ID,QUESTION_ID,USERNAME,GUESS,LEVEL) \
+                VALUES ("+str(game_id)+","+str(question_id)+", '"+username+"','"+guess+"',"+ str(level)+" )"
+                #print(db_string)
+                conn.execute(db_string)
+                conn.commit()
+            else:
+                print("Användaren har redan skickat ett svar")
 
         # Since we have commands and are overriding the default `event_message`
         # We must let the bot know we want to handle and invoke our commands...
